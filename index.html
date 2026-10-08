@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Mikko Child Learning Center Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container" id="homeContainer">
+        <div class="poster-section">
+            <div class="poster-header">
+                LITTLE MIKKO CHILD LEARNING CENTER INC.
+            </div>
+            <div class="poster-content">
+                <div class="poster-left-col">
+                    <div>
+                        <div class="school-year-banner">2023–2024</div>
+                        <h1 class="school-admission-title">SCHOOL<br>ADMISSION</h1>
+                        <div class="registration-sub">Now Open For Registration</div>
+                    </div>
+
+                    <div class="offer-section">
+                        <div class="offer-label">WE OFFER:</div>
+                        
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">NURSERY</div>
+                                <div class="program-age">• 3 yrs old</div>
+                            </div>
+                        </div>
+
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">PRE-KINDER</div>
+                                <div class="program-age">• 4 yrs old</div>
+                            </div>
+                        </div>
+
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">KINDER</div>
+                                <div class="program-age">• 5 yrs old</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="enrol-now-btn" onclick="openModal('registerModal')">ENROL NOW</button>
+
+                    <div class="contact-strip">
+                        <div class="phone-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <div>09088600513</div>
+                            <div>09209670209</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-right-col">
+                    <div class="school-logo-badge">
+                        <img src="https://i.imgur.com/7YV4m3k.png" alt="School Logo" onerror="this.src='https://via.placeholder.com/60'">
+                    </div>
+
+                    <div class="photo-collage">
+                        <div class="collage-row-1">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&auto=format&fit=crop&q=60" alt="Students">
+                        </div>
+                        <div class="collage-row-2">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=300&auto=format&fit=crop&q=60" alt="Classroom">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=300&auto=format&fit=crop&q=60" alt="Kids activity">
+                        </div>
+                        <div class="collage-row-3">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=300&auto=format&fit=crop&q=60" alt="Chefs kids">
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=300&auto=format&fit=crop&q=60" alt="Graduation">
+                        </div>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portal-section">
+            <div class="portal-block">
+                <h2>REGISTER ONLINE</h2>
+                <p>Access our online admission link and learn about our enrollment procedure</p>
+                <button class="portal-btn register-action-btn" onclick="openModal('registerModal')">REGISTER</button>
+            </div>
+
+            <div class="portal-block">
+                <h2>USER LOGIN</h2>
+                <p>Access your personal account</p>
+                <button class="portal-btn login-action-btn" onclick="openModal('loginModal')">LOGIN</button>
+            </div>
+
+            <div class="portal-footer-info">
+                <strong>Location:</strong> P. Nadres St. Brgy. Angeles Zone 2<br>
+                <strong>Telephone:</strong> 09088600513 / 09209670209<br>
+                <strong>Email:</strong> obetraydispalacio@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-card wide-card">
+            <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            <h2 class="dark-modal-title" style="color: #144521;">Student Online Registration</h2>
+            <p class="dark-modal-sub" style="color: #666;">Fill out your details to apply for admission.</p>
+            
+            <form onsubmit="handleRegister(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="regName" required placeholder="Enter student's full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="regAge" required placeholder="Age">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Program Applying For</label>
+                        <select id="regProgram">
+                            <option>Nursery (3 yrs old)</option>
+                            <option>Pre-Kinder (4 yrs old)</option>
+                            <option>Kinder (5 yrs old)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Parent / Guardian</label>
+                        <input type="text" id="regParent" required placeholder="Parent's Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" id="regContact" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="modal-submit-btn">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card dark-modal-card">
+            <button class="close-modal dark-close" onclick="closeModal('loginModal')">&times;</button>
+            <h2 class="dark-modal-title">Portal Login</h2>
+            <p class="dark-modal-sub">Select role or enter username to login.</p>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="dark-label">Select Account Type</label>
+                    <select id="loginRole" class="dark-input" style="background: rgba(255,255,255,0.1); color: white;">
+                        <option value="student" style="color: #333;">Student Account</option>
+                        <option value="teacher" style="color: #333;">Teacher Account</option>
+                        <option value="admin" style="color: #333;">Admin Account</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="dark-label">Username / Email</label>
+                    <input type="text" id="loginUser" class="dark-input" required placeholder="e.g. admin, teacher, student">
+                </div>
+                <div class="form-group">
+                    <label class="dark-label">Password</label>
+                    <input type="password" id="loginPass" class="dark-input" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="dark-submit-btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dashboard-container" id="studentDashboard">
+        <div class="custom-dash-layout">
+            <div class="dash-sidebar">
+                <div class="dash-sidebar-top">
+                    <div class="dash-sidebar-logo">
+                        <img src="https://i.imgur.com/7YV4m3k.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50'">
+                    </div>
+                    <div class="dash-nav-icons">
+                        <button class="nav-icon-btn active" onclick="switchStudentTab('studentHomeTab', this)" title="Home / Overview"><i class="fas fa-home"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentCalendarTab', this)" title="Announcements & Calendar"><i class="fas fa-calendar-alt"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentBillingTab', this)" title="Tuition & Payment Portal"><i class="fas fa-file-invoice-dollar"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentMilestoneTab', this)" title="Developmental Tracking"><i class="fas fa-child"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentReportTab', this)" title="Report Card"><i class="fas fa-award"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentMessageTab', this)" title="Messaging"><i class="fas fa-comments"></i></button>
+                    </div>
+                </div>
+                <div class="dash-sidebar-bottom">
+                    <button class="topbar-action-icon" onclick="logout()" title="Logout" style="color: #144521;"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="dash-main-content">
+                <div class="dash-topbar">
+                    <div class="dash-title-area">
+                        <h1>STUDENT & PARENT PORTAL</h1>
+                    </div>
+                    <div class="dash-topbar-icons">
+                        <button class="topbar-action-icon"><i class="fas fa-bell"></i></button>
+                        <button class="topbar-action-icon"><i class="fas fa-user-circle"></i></button>
+                    </div>
+                </div>
+
+                <div id="studentHomeTab" class="student-module-section active">
+                    <div class="dash-grid-body">
+                        <div class="dash-left-column">
+                            <div class="dash-section-box">
+                                <h2 class="dash-section-title">Today</h2>
+                                <div class="today-card-content">
+                                    <div class="today-subjects-list">
+                                        <div class="subject-day-label">Monday Subjects:</div>
+                                        <div class="subject-item-row">• Early Math & Counting</div>
+                                        <div class="subject-item-row">• Alphabet & Phonics</div>
+                                        <div class="subject-item-row">• Creative Art & Coloring</div>
+                                    </div>
+                                    <div>
+                                        <div class="today-date-badge">October 9, 2026</div>
+                                        <div class="today-photo-banner">
+                                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=60" alt="Class activities">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dash-section-box">
+                                <h2 class="dash-section-title">Featured</h2>
+                                <div class="featured-cards-row">
+                                    <div class="featured-main-banner">
+                                        <h3>School Fun Day & Outdoor Play</h3>
+                                        <p>Join us this Friday for our interactive learning games and fun physical education session at the main courtyard.</p>
+                                    </div>
+                                    <div class="school-gallery-card" onclick="alert('Opening photo gallery...')">
+                                        <i class="fas fa-images"></i>
+                                        <h4>School Gallery</h4>
+                                        <span>View memories</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dash-right-column">
+                            <div class="right-widget-card">
+                                <div class="right-widget-title">Quick Grades</div>
+                                <div class="grades-table-row"><span>Alphabet & Phonics</span><span>95 (A)</span></div>
+                                <div class="grades-table-row"><span>Early Math</span><span>92 (A)</span></div>
+                                <div class="grades-table-row"><span>Creative Art</span><span>98 (S)</span></div>
+                            </div>
+
+                            <div class="right-widget-card">
+                                <div class="right-widget-title">Financial Balance</div>
+                                <div class="financial-line">Status: <strong>Paid / Up-to-Date</strong></div>
+                                <div class="financial-line">Next Due: <strong>Nov 15, 2026</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentCalendarTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>School Announcements & Upcoming Events</h3>
+                        <div class="announcement-card" style="background: #f9f9f9; padding: 15px; border-left: 4px solid #144521; margin-bottom: 15px; border-radius: 4px;">
+                            <h4 style="color: #144521; margin-bottom: 5px;"><i class="fas fa-bullhorn"></i> Parent-Teacher Quarterly Conference</h4>
+                            <p style="font-size: 0.85rem; color: #555;">Join us this coming October 20, 2026, for individual progress consultations with class advisers.</p>
+                            <span style="font-size: 0.75rem; color: #888;">Posted: Oct 8, 2026</span>
+                        </div>
+                        <div class="announcement-card" style="background: #f9f9f9; padding: 15px; border-left: 4px solid #d4af37; margin-bottom: 15px; border-radius: 4px;">
+                            <h4 style="color: #144521; margin-bottom: 5px;"><i class="fas fa-calendar-day"></i> School Foundation Sports Fest</h4>
+                            <p style="font-size: 0.85rem; color: #555;">Wear sports uniforms on October 25, 2026, for our indoor games and physical coordination drills.</p>
+                            <span style="font-size: 0.75rem; color: #888;">Posted: Oct 5, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentBillingTab" class="student-module-section">
+                    <div class="table-card" style="color: #333; margin-bottom: 20px;">
+                        <h3>Tuition Fee Statement & Account Ledger</h3>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Fee Description</th>
+                                        <th>Due Date</th>
+                                        <th>Amount Due</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>First Quarter Tuition Fee</td>
+                                        <td>Aug 15, 2026</td>
+                                        <td>₱12,500</td>
+                                        <td><span class="status-badge approved">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Second Quarter Tuition Fee</td>
+                                        <td>Nov 15, 2026</td>
+                                        <td>₱12,500</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-card" style="color: #333; background: #eef5f0;">
+                        <h3><i class="fas fa-credit-card"></i> Online Payment Portal</h3>
+                        <p style="font-size: 0.85rem; margin-bottom: 15px; color: #555;">Settle your account balance securely via GCash, Credit Card, or Bank Transfer.</p>
+                        <form onsubmit="handlePayment(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label style="font-size: 0.8rem; font-weight:750; color:#144521;">Payment Method</label>
+                                    <select class="dark-input" style="color:#333; background:#fff;">
+                                        <option>GCash Mobile Wallet</option>
+                                        <option>Credit / Debit Card (Visa/Mastercard)</option>
+                                        <option>BPI / BDO Online Banking</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 0.8rem; font-weight:750; color:#144521;">Amount to Pay (₱)</label>
+                                    <input type="number" value="12500" required class="dark-input" style="color:#333; background:#fff;">
+                                </div>
+                            </div>
+                            <button type="submit" class="logout-btn" style="background: #144521; color: white; padding: 10px 20px; font-weight: 800;">Proceed with Secure Payment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="studentMilestoneTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>Child Developmental Milestone Tracking</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Evaluated quarterly by your child's adviser based on early childhood standards.</p>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Developmental Domain</th>
+                                        <th>Milestone Skill Competency</th>
+                                        <th>Teacher Assessment Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fine Motor Skills</td>
+                                        <td>Holding crayons properly, tracing shapes, and cutting with safety scissors.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Language & Communication</td>
+                                        <td>Expressing needs clearly, reciting simple nursery rhymes, answering questions.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social & Emotional</td>
+                                        <td>Sharing toys, playing cooperatively during group activities, taking turns.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cognitive & Math</td>
+                                        <td>Counting numbers 1-20, identifying primary colors and basic geometric shapes.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentReportTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>Quarterly Academic Report Card</h3>
+                            <button class="logout-btn" style="background: #144521; color: white;" onclick="alert('Downloading PDF report card...')"><i class="fas fa-download"></i> Download Report Card</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Learning Area / Subject</th>
+                                        <th>1st Quarter</th>
+                                        <th>2nd Quarter</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alphabet & Phonics</td>
+                                        <td>95 (A)</td>
+                                        <td>-</td>
+                                        <td>Excellent progress in letter sounds</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Early Math & Number Concepts</td>
+                                        <td>92 (A)</td>
+                                        <td>-</td>
+                                        <td>Demonstrates great counting skills</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Creative Arts & Expression</td>
+                                        <td>98 (S)</td>
+                                        <td>-</td>
+                                        <td>Very creative and enthusiastic</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentMessageTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>Direct Teacher / School Messaging</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Send inquiries or concerns directly to your child's adviser or school administration.</p>
+                        
+                        <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; margin-bottom: 15px; max-height: 250px; overflow-y: auto;">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #144521;">Teacher Anna Reyes (Adviser):</strong>
+                                <p style="font-size: 0.85rem; background: #eef5f0; padding: 8px; border-radius: 6px; margin-top: 3px;">Hello! Sophia did wonderful during today's art project.</p>
+                                <span style="font-size: 0.7rem; color: #888;">Yesterday at 2:30 PM</span>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleSendMessage(event)">
+                            <div class="form-group">
+                                <textarea rows="3" placeholder="Type your message to the teacher or school admin..." required class="dark-input" style="color:#333; background:#fff;"></textarea>
+                            </div>
+                            <button type="submit" class="logout-btn" style="background: #144521; color: white;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container-admin" id="teacherDashboard">
+        <header class="dash-header" style="background: #0d2e16;">
+            <div class="dash-logo">LITTLE MIKKO - TEACHER PORTAL</div>
+            <div class="dash-user-info">
+                <span>Teacher Adviser</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        <div class="dash-content">
+            <h2>Teacher Dashboard</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="dashboard-container-admin" id="adminDashboard">
+        <header class="dash-header">
+            <div class="dash-logo">LITTLE MIKKO - ADMIN PORTAL</div>
+            <div class="dash-user-info">
+                <span>Admin</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        <div class="dash-content">
+            <h2>Admin Dashboard</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function switchStudentTab(tabId, btnElement) {
+            document.querySelectorAll('.student-module-section').forEach(mod => mod.classList.remove('active'));
+            document.querySelectorAll('.dash-sidebar .nav-icon-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const role = document.getElementById('loginRole').value;
+            
+            closeModal('loginModal');
+            document.getElementById('homeContainer').style.display = 'none';
+
+            if (role === 'admin') {
+                document.getElementById('adminDashboard').style.display = 'block';
+            } else if (role === 'teacher') {
+                document.getElementById('teacherDashboard').style.display = 'block';
+            } else {
+                document.getElementById('studentDashboard').style.display = 'block';
+            }
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            alert('Registration submitted successfully!');
+            closeModal('registerModal');
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('studentDashboard').style.display = 'block';
+        }
+
+        function handlePayment(event) {
+            event.preventDefault();
+            alert('Payment transaction successfully processed! Receipt has been generated.');
+        }
+
+        function handleSendMessage(event) {
+            event.preventDefault();
+            alert('Message sent successfully to school administration / adviser!');
+        }
+
+        function logout() {
+            document.getElementById('studentDashboard').style.display = 'none';
+            document.getElementById('teacherDashboard').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('homeContainer').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

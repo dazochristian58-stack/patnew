@@ -1,0 +1,787 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* HOMEPAGE CONTAINER */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* LEFT SIDE POSTER */
+.poster-section {
+    flex: 3;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-right: 4px solid #144521;
+}
+
+.poster-header {
+    background: #144521;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.poster-content {
+    display: flex;
+    flex: 1;
+    background: #eef5f0;
+}
+
+.poster-left-col {
+    flex: 1.2;
+    background: #144521;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.school-year-banner {
+    background: #d4af37;
+    color: #144521;
+    padding: 6px 14px;
+    font-weight: 800;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    align-self: flex-start;
+}
+
+.school-admission-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.registration-sub {
+    font-size: 0.95rem;
+    color: #d4af37;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.offer-section {
+    margin: 20px 0;
+}
+
+.offer-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #a8d5ba;
+}
+
+.program-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.program-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.program-age {
+    font-size: 0.8rem;
+    color: #ffd700;
+}
+
+.enrol-now-btn {
+    background: #d4af37;
+    color: #144521;
+    border: none;
+    padding: 12px;
+    font-weight: 900;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.enrol-now-btn:hover {
+    background: #e5c158;
+}
+
+.contact-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 12px;
+}
+
+.phone-icon {
+    background: #d4af37;
+    color: #144521;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.poster-right-col {
+    flex: 1.5;
+    background: #f4d03f;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.school-logo-badge {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #144521;
+    align-self: flex-end;
+}
+
+.school-logo-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-collage {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.collage-row-1 img, .collage-row-2 img, .collage-row-3 img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.collage-row-2, .collage-row-3 {
+    display: flex;
+    gap: 8px;
+}
+
+.collage-row-2 img, .collage-row-3 img {
+    height: 70px;
+    flex: 1;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #144521;
+    opacity: 0.3;
+    border-radius: 50%;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+/* RIGHT SIDE PORTAL CONTROLS */
+.portal-section {
+    flex: 1.2;
+    background: #144521;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+}
+
+.portal-block {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portal-block h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
+.portal-block p {
+    font-size: 0.85rem;
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.portal-btn {
+    width: 100%;
+    padding: 12px;
+    font-weight: 800;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.register-action-btn {
+    background: #d4af37;
+    color: #144521;
+}
+
+.register-action-btn:hover {
+    background: #e5c158;
+}
+
+.login-action-btn {
+    background: #ffffff;
+    color: #144521;
+}
+
+.login-action-btn:hover {
+    background: #f0f0f0;
+}
+
+.portal-footer-info {
+    font-size: 0.75rem;
+    color: #aaa;
+    line-height: 1.5;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+}
+
+/* MODALS */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.dark-modal-card {
+    background: #144521;
+    color: white;
+    border: 2px solid #d4af37;
+}
+
+.wide-card {
+    max-width: 600px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none; border: none;
+    font-size: 1.5rem; cursor: pointer;
+    color: #666;
+}
+
+.dark-close {
+    color: #fff;
+}
+
+.dark-modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.dark-modal-sub {
+    font-size: 0.85rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.dark-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.dark-input, .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.dark-input:focus, .form-group input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.dark-submit-btn {
+    width: 100%;
+    background: #d4af37;
+    color: #144521;
+    border: none;
+    padding: 12px;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.dark-submit-btn:hover {
+    background: #e5c158;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.modal-submit-btn {
+    width: 100%;
+    background: #144521;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* CUSTOM STUDENT DASHBOARD */
+.dashboard-container {
+    display: none;
+    background-color: #144521;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+.custom-dash-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.dash-sidebar {
+    width: 90px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-right: 2px solid #113a1b;
+}
+
+.dash-sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.dash-sidebar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #144521;
+}
+
+.dash-sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dash-nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-icon-btn {
+    width: 48px;
+    height: 48px;
+    background: #f4d03f;
+    border: none;
+    border-radius: 12px;
+    color: #144521;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.nav-icon-btn:hover, .nav-icon-btn.active {
+    background: #144521;
+    color: #f4d03f;
+}
+
+.dash-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #144521;
+}
+
+/* Main Dashboard Content Area */
+.dash-main-content {
+    flex: 1;
+    padding: 25px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.student-module-section {
+    display: none;
+}
+
+.student-module-section.active {
+    display: block;
+}
+
+.dash-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+    padding-bottom: 15px;
+}
+
+.dash-title-area h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.dash-topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-action-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* Dashboard Grid Layout */
+.dash-grid-body {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 25px;
+}
+
+.dash-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.dash-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card Sections */
+.dash-section-box {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
+
+.dash-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+}
+
+/* Today Card Content */
+.today-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.today-subjects-list {
+    flex: 1;
+}
+
+.subject-day-label {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.subject-item-row {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    margin-bottom: 6px;
+    color: #f0f0f0;
+}
+
+.today-date-badge {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    text-align: right;
+}
+
+.today-photo-banner {
+    width: 220px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-top: 5px;
+}
+
+.today-photo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Featured Section */
+.featured-cards-row {
+    display: flex;
+    gap: 20px;
+}
+
+.featured-main-banner {
+    flex: 1.6;
+    background: #dcdcdc;
+    color: #222;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.featured-main-banner h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.featured-main-banner p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.school-gallery-card {
+    flex: 1;
+    background: #dcdcdc;
+    color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.school-gallery-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.school-gallery-card i {
+    font-size: 2.2rem;
+    color: #144521;
+    margin-bottom: 6px;
+}
+
+.school-gallery-card span {
+    font-size: 0.7rem;
+    color: #444;
+}
+
+/* Right Column Cards */
+.right-widget-card {
+    background: white;
+    color: #222;
+    padding: 15px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.right-widget-title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #144521;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+.grades-table-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.financial-line {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.financial-line strong {
+    font-weight: 700;
+}
+
+/* SHARED TABLE & CARDS */
+.table-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.table-card h3 {
+    margin-bottom: 15px;
+    color: #144521;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.admin-table th {
+    background: #f9f9f9;
+    color: #144521;
+    font-weight: 700;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-badge.approved {
+    background: #e1f5fe;
+    color: #0288d1;
+}
+
+.status-badge.pending {
+    background: #fff8e1;
+    color: #f57c00;
+}
+
+.logout-btn {
+    background: #d4af37;
+    color: #144521;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
